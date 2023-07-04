@@ -75,9 +75,6 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <printSummary>true</printSummary>
-                    <printSuccessfulTests>true</printSuccessfulTests>
-                    <printFailures>true</printFailures>
-                    <printErrorMessages>true</printErrorMessages>
                     <useFile>false</useFile>
                 </configuration>
             </plugin>
@@ -125,7 +122,8 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>br.com.produtos.Application</mainClass>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>br.com.produtos.Application.class</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
