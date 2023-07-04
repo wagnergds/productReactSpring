@@ -39,6 +39,28 @@ Para executar os testes automatizados, siga as etapas abaixo:
 
 Isso executará os testes e exibirá os resultados no console.
 
+## Dockerfile
+
+Se você preferir executar o aplicativo em um contêiner Docker, você pode usar o Dockerfile fornecido. Siga as etapas abaixo para criar e executar o contêiner:
+
+1. Certifique-se de que o Docker esteja instalado e em execução em sua máquina.
+2. Abra um terminal e navegue até o diretório raiz do projeto.
+3. Construa a imagem do Docker executando o seguinte comando:
+
+   ```shell
+   docker build -t product-react-spring .
+
+Esse comando criará uma imagem Docker chamada product-react-spring com base no Dockerfile fornecido.
+
+Após a conclusão da construção da imagem, execute o contêiner com o seguinte comando:
+
+   docker run -p 8080:8080 product-react-spring
+
+
+Esse comando iniciará o contêiner e mapeará a porta 8080 do contêiner para a porta 8080 do host.
+
+Agora você pode acessar a API em http://localhost:8080/produtos no seu navegador ou por meio de uma ferramenta como o cURL ou o Postman.
+
 ## Integração Contínua e Entrega Contínua (CI/CD) com Jenkins
 
 Para configurar e executar os pipelines de CI/CD para este projeto no Jenkins, siga as etapas abaixo:
