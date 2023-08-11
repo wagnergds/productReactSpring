@@ -19,14 +19,16 @@ Siga as etapas abaixo para executar o projeto em sua máquina local:
 1. Faça o clone deste repositório para o seu ambiente de desenvolvimento:
    - git clone https://github.com/wagnergds/productReactSpring.git
 2. Navegue até o diretório `frontend/produtos`.
-3. Execute o comando `npm install` para instalar as dependências do projeto.
+3. Via terminal, execute o comando `npm install` para instalar as dependências do projeto.
    - npm start
+   - http://localhost:3000
 4. Acesse a pasta do projeto:
    - cd productReactSpring/src
 5. Compile o projeto usando o Maven:
-   - `mvn compile`
+   - `mvn clean install`
 6. Execute o projeto:
    - `mvn spring-boot:run`
+
 
 7. A API estará disponível em http://localhost:8080/produtos. Você pode acessar esse endpoint em seu navegador ou por meio de uma ferramenta como o cURL ou o Postman.
 
@@ -46,9 +48,12 @@ Se você preferir executar o aplicativo em um contêiner Docker, você pode usar
 1. Certifique-se de que o Docker esteja instalado e em execução em sua máquina.
 2. Abra um terminal e navegue até o diretório raiz do projeto.
 3. Construa a imagem do Docker executando o seguinte comando:
+   
 
    ```shell
+   `mvn clean package spring-boot:repackage`
    docker build -t product-react-spring .
+   docker-compose up --build
 
 Esse comando criará uma imagem Docker chamada product-react-spring com base no Dockerfile fornecido.
 
