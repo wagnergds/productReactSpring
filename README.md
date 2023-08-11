@@ -6,11 +6,11 @@ Este é um projeto de exemplo para um sistema de gerenciamento de produtos.
 
 Antes de executar o projeto, verifique se você tem os seguintes requisitos instalados em sua máquina:
 
-- Java Development Kit (JDK) 8 ou superior
+- Java Development Kit (JDK) 11
 - Maven
 - Banco de dados H2 (em memória) - já incluído no projeto
-- Node.js (v14.16.1 ou superior)
-- npm (v6.14.12 ou superior)
+- Node.js (v18.12.1)
+- npm (v7.11.2)
 
 ## Executando o projeto
 
@@ -19,7 +19,8 @@ Siga as etapas abaixo para executar o projeto em sua máquina local:
 1. Faça o clone deste repositório para o seu ambiente de desenvolvimento:
    - git clone https://github.com/wagnergds/productReactSpring.git
 2. Navegue até o diretório `src/frontend/produtos`.
-3. Via terminal, execute o comando `npm install` para instalar as dependências do projeto.
+3. Via terminal, execute o comando `npm install` para instalar as dependências do projeto .
+  *******Se for executar via npm e spring ou docker, o comando acima de install é necessário ****
    - npm start
    - http://localhost:3000
 4. Acesse a pasta do projeto:
@@ -47,25 +48,22 @@ Se você preferir executar o aplicativo em um contêiner Docker, você pode usar
 
 1. Certifique-se de que o Docker esteja instalado e em execução em sua máquina.
 2. Abra um terminal e navegue até o diretório raiz do projeto.
-3. Construa a imagem do Docker executando o seguinte comando:
-   
+3. Construa a imagem do Docker executando os comandos abaixos
 
-   ```shell
-   mvn clean package spring-boot:repackage
-  docker build -t product-react-spring .
-  docker-compose up --build
-```
+`mvn clean package spring-boot:repackage`
+
+Na raiz do projeto execute os comandos abaixo
 
 Esse comando criará uma imagem Docker chamada product-react-spring com base no Dockerfile fornecido.
 
+`docker build -t product-react-spring .`
+
 Após a conclusão da construção da imagem, execute o contêiner com o seguinte comando:
+`docker-compose up --build`
+ 
+Esse comando iniciará o contêiner e mapeará a porta 8080 do contêiner para a porta 3000 do host.
 
-   docker run -p 8080:8080 product-react-spring
-
-
-Esse comando iniciará o contêiner e mapeará a porta 8080 do contêiner para a porta 8080 do host.
-
-Agora você pode acessar a API em http://localhost:8080/produtos no seu navegador ou por meio de uma ferramenta como o cURL ou o Postman.
+Agora você pode acessar a API em http://localhost:3000 no seu navegador ou por meio de uma ferramenta como o cURL ou o Postman.
 
 ## Integração Contínua e Entrega Contínua (CI/CD) com Jenkins
 

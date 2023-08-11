@@ -9,7 +9,6 @@ function App() {
         fetchProdutos();
     }, []);
 
-    // Define a variável apiUrl no escopo global
     const apiUrl = process.env.REACT_APP_API_URL;
 
     const fetchProdutos = async () => {
@@ -32,29 +31,39 @@ function App() {
         setPrecoProduto('');
     };
 
-  return (
-      <div>
-        <h1>Listagem de Produtos</h1>
-        <ul>
-          {produtos.map((produto) => (
-              <li key={produto.id}>{produto.nome} - R$ {produto.preco}</li>
-          ))}
-        </ul>
-        <input
-            type="text"
-            placeholder="Nome do Produto"
-            value={nomeProduto}
-            onChange={(e) => setNomeProduto(e.target.value)}
-        />
-        <input
-            type="text"
-            placeholder="Preço do Produto"
-            value={precoProduto}
-            onChange={(e) => setPrecoProduto(e.target.value)}
-        />
-        <button onClick={adicionarProduto}>Adicionar Produto</button>
-      </div>
-  );
+    const handlePrecoChange = (e) => {
+        const inputValue = e.target.value;
+        // Verifica se o valor é um número com até duas casas decimais
+        if (/^\d+(\.\d{0,2})?$/.test(inputValue) || inputValue === '') {
+            setPrecoProduto(inputValue);
+        }
+    };
+
+    return (
+        <div>
+            <h1>Listagem de Produtos</h1>
+            <h2>Produtos e Preços</h2>
+
+            <ul>
+                {produtos.map((produto) => (
+                    <li key={produto.id}>{produto.nome} - R$ {produto.preco}</li>
+                ))}
+            </ul>
+            <input
+                type="text"
+                placeholder="Nome do Produto"
+                value={nomeProduto}
+                onChange={(e) => setNomeProduto(e.target.value)}
+            />
+            <input
+                type="text"
+                placeholder="Preço do Produto"
+                value={precoProduto}
+                onChange={handlePrecoChange}
+            />
+            <button onClick={adicionarProduto}>Adicionar Produto</button>
+        </div>
+    );
 }
 
 export default App;
