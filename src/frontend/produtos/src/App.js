@@ -41,14 +41,6 @@ function App() {
 
     return (
         <div>
-            <h1>Listagem de Produtos</h1>
-            <h2>Produtos e Preços</h2>
-
-            <ul>
-                {produtos.map((produto) => (
-                    <li key={produto.id}>{produto.nome} - R$ {produto.preco}</li>
-                ))}
-            </ul>
             <input
                 type="text"
                 placeholder="Nome do Produto"
@@ -62,6 +54,14 @@ function App() {
                 onChange={handlePrecoChange}
             />
             <button onClick={adicionarProduto}>Adicionar Produto</button>
+            <h1>Listagem de Produtos</h1>
+            <h2>Produtos e Preços</h2>
+
+            <ul>
+                {produtos.map((produto) => (
+                    <li key={produto.id}>{produto.nome} - R$ {produto.preco}</li>
+                ))}
+            </ul>
         </div>
     );
 }
