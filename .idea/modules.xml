@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/src/productReactSpring.iml" filepath="$PROJECT_DIR$/src/productReactSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/productReactSpring.iml" filepath="$PROJECT_DIR$/productReactSpring.iml" />
     </modules>
   </component>
 </project>

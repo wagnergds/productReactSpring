@@ -1,5 +1,5 @@
 # Defina a imagem base como o servidor web Node.js
-FROM node:14-alpine as build
+FROM node:18-alpine as build
 
 # Defina o diretório de trabalho para a aplicação React
 WORKDIR /app/frontend/produtos

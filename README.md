@@ -18,7 +18,7 @@ Siga as etapas abaixo para executar o projeto em sua máquina local:
 
 1. Faça o clone deste repositório para o seu ambiente de desenvolvimento:
    - git clone https://github.com/wagnergds/productReactSpring.git
-2. Navegue até o diretório `frontend/produtos`.
+2. Navegue até o diretório `src/frontend/produtos`.
 3. Via terminal, execute o comando `npm install` para instalar as dependências do projeto.
    - npm start
    - http://localhost:3000
