@@ -51,9 +51,10 @@ Se você preferir executar o aplicativo em um contêiner Docker, você pode usar
    
 
    ```shell
-   `mvn clean package spring-boot:repackage`
-   docker build -t product-react-spring .
-   docker-compose up --build
+   mvn clean package spring-boot:repackage
+  docker build -t product-react-spring .
+  docker-compose up --build
+```
 
 Esse comando criará uma imagem Docker chamada product-react-spring com base no Dockerfile fornecido.
 
